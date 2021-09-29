@@ -1,11 +1,19 @@
-import sys
+"""
+봉지무게 3 or 5
+"""
 
-n = int(sys.stdin.readline())
+N = int(input())
 
 count = 0
 
-for bag in [5, 3]:
-    count += n // bag
-    n %= bag
-
-sys.stdout.write(str(count))
+while N >= 0:
+    if N % 5 == 0:
+        count += N // 5
+        print(count)
+        break
+    else:
+        N -= 3
+        count += 1
+    if N < 0:
+        print(-1)
+        break
